@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		
+		<meta charset="UTF-8">
+	
+
+		<title></title>
+
+	</head>
+	<body>
+		
+		
+		<head>
+		<style>
+		#header {
+			background-color:black;
+			color:white;
+			text-align:center;
+			padding:5px;
+		}
+		#nav {
+			line-height:30px;
+			background-color:#eeeeee;
+			height:1100px;
+			width:100px;
+			float:left;
+			padding:5px;	      
+		}
+		#section1 {
+			width:1050px;
+			float:left;
+			padding:10px;	 	 
+		}
+		
+	
+	 
+		}
+		</style>
+		
+
+		</head>
+<!--这是单行注释--><!--这是单行注释--><!--这是单行注释--><!--这是单行注释--><!--这是单行注释--><!--这是单行注释-->
+		<body>
+
+		<div id="header">
+		<h1>基于聚合签名的区块链合同签署系统</h1>
+		
+
+		</div>
+		
+<!--这是单行注释--><!--这是单行注释--><!--这是单行注释--><!--这是单行注释--><!--这是单行注释-->
+		<div id="nav">
+		<br><br><br><br><br><br>
+		地址为：<br><br><br>
+		( m , ri )：<br><br><br>
+		<button onclick="App.WhetherSingleSignature()">是否签名</button><br><br><br><br><br><br>
+		<button onclick="App.SingleSignatureVerify()">用户签名验证</button><br><br><br>
+		<button onclick="App.MutiSignatureGenerate()">生成聚合签名</button><br><br><br><br><br><br>
+		<button onclick="App.MutiSignatureVerify()">聚合签名验证</button><br><br><br><br><br><br><br>
+		<button onclick="App.Blind_MutiSignatureGenerate()">盲聚合签名<br>生成</button><br>
+		</div>
+		
+<!--这是单行注释--><!--这是单行注释--><!--这是单行注释--><!--这是单行注释--><!--这是单行注释-->
+		<div id="section1">
+		<h3 >用户1（U1)
+		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+			用户2（U2)
+		&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+		    用户3（U3）</h3>
+		
+		<button onclick="App.SingleSignatureGenerate1()">进行签名</button>
+	&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+		<button onclick="App.SingleSignatureGenerate2()">进行签名</button>
+	&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+		<button onclick="App.SingleSignatureGenerate3()">进行签名</button>
+		
+		<table border="0" width="1000" height="70" style="border-collapse:collapse;table-layout:fixed;word-break:break-all;">
+		<tr>
+		<td><p id="status1">?</p></td>
+		<td><p id="status2">?</p></td>
+		<td><p id="status3">?</p></td>
+		</tr>
+		</table>
+
+
+		
+	
+		<table border="0" width="1000" height="250" style="border-collapse:collapse;table-layout:fixed;word-break:break-all;">
+		<tr>
+		<td><p id="address1"></p></td>
+		<td><p id="address2"></p></td>
+		<td><p id="address3"></p></td>
+		</tr>
+		<tr>
+		<td><p id="signcontent1"></p></td>
+		<td><p id="signcontent2"></p></td>
+		<td><p id="signcontent3"></p></td>
+		</tr>
+		<tr>
+		<td><p id="ifsign1"></p></td>
+		<td><p id="ifsign2"></p></td>
+		<td><p id="ifsign3"></p></td>
+		</tr>
+		</table>
+		
+		<br><br>
+		<h3 >聚合者(Uc):</h3 >
+		<table border="0" width="1000" height="84" style="border-collapse:collapse;table-layout:fixed;word-break:break-all;">	
+		<tr>
+		<td><p id="verify1"></p></td>
+		<td><p id="verify2"></p></td>
+		<td><p id="verify3"></p></td>
+		</tr>
+		</table>
+		
+		<table border="0" width="1000" height="84" >
+		<tr>
+		<td><p id="MutiSign"></p></td>
+		</tr>
+		</table>
+		
+		
+		<br><br>
+		<h3 >验证者(Uv):</h3 >
+		<table border="0" width="300" height="84" style="border-collapse:collapse;table-layout:fixed;word-break:break-all;">
+		<tr>
+		<td><p id="MutiVerify"></p></td>
+		</tr>
+		</table>
+		<h3 >-------------------------------------------------------------【一种盲聚合签名方案】-------------------------------------------------------------------------</h3 >
+
+		<br><br>
+		<input type="file" id="input1">
+		<span id="preview1" hidden>?</span>
+		<p id="test1" hidden>???</p>
+		
+		<input type="file" id="input2">
+		<span id="preview2" hidden>?</span>
+		<p id="test2" hidden>???</p>
+		
+		<input type="file" id="input3">
+		<span id="preview3" hidden>?</span>
+		<p id="test3" hidden>???</p>
+		
+		<br><br><br>
+		<p id="Blind_MutiSign">?</p>
+	
+		
+		</div>
+<!--这是单行注释--><!--这是单行注释--><!--这是单行注释--><!--这是单行注释--><!--这是单行注释-->		
+	
+
+	   
+		 <script src="index.js"></script>
+		 <script>
+		
+		(function(){
+			var input = document.querySelector('#input1');
+			var span = document.querySelector('#preview1');
+			input.addEventListener('change', function(e){
+				handFile(e.target.files[0]);
+			});
+		 
+			function handFile(file){
+				var reader = new FileReader();
+				reader.onload = function(e){
+					span.innerText = e.target.result;
+					const temp=document.getElementById("test1").innerHTML=e.target.result;
+				};
+				reader.readAsText(file);
+			}
+		})();
+		
+		(function(){
+			var input = document.querySelector('#input2');
+			var span = document.querySelector('#preview2');
+			input.addEventListener('change', function(e){
+				handFile(e.target.files[0]);
+			});
+		 
+			function handFile(file){
+				var reader = new FileReader();
+				reader.onload = function(e){
+					span.innerText = e.target.result;
+					const temp=document.getElementById("test2").innerHTML=e.target.result;
+				};
+				reader.readAsText(file);
+			}
+		})();
+		
+		(function(){
+				var input = document.querySelector('#input3');
+				var span = document.querySelector('#preview3');
+				input.addEventListener('change', function(e){
+					handFile(e.target.files[0]);
+				});
+			 
+				function handFile(file){
+					var reader = new FileReader();
+					reader.onload = function(e){
+						span.innerText = e.target.result;
+						const temp=document.getElementById("test3").innerHTML=e.target.result;
+					};
+					reader.readAsText(file);
+				}
+			})();
+		
+		</script>
+		
+	</body>
+</html>
