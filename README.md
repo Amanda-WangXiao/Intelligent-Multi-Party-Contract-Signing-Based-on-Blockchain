@@ -13,3 +13,10 @@ On the other hand, in addition to fulfilling the original requirements, this des
   
 另一方面，本设计除了完成原有要求，针对高隐私性应用需求，提出了一种带有盲化的多方合同签署系统。该系统（隐私性签署系统）相比初版系统（公平性签署系统），更加侧重用户的隐私保护。隐私性签署系统基于混密钥的方式对合同消息与用户身份进行了盲化，这样可以满足一部分签署方需要匿名的合同签署需求。相比初版系统强调的公平性、可追溯性，该版本更加强调用户信息的隐私性、保密性，满足了不同用户对于合同签署系统的要求。
   
+#Environment  
+macOS Catalina 10.15.5  
+Truffle v5.1.20  
+Solidity v0.5.17  
+npm v6.14.4  
+
+
