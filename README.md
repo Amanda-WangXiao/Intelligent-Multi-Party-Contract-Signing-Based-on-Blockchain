@@ -1,6 +1,7 @@
 # Dapp: A Multi-Party Contract Signing System
 Graduation Design
   
+# Introduction
 With the development of Internet Technology and the change of people's life pattern, the informative and efficient office mode is becoming more and more popular. Traditional contract signing always requires a trusted third party to provide supervision, and each signatory party cannot avoid the harm caused by the third party's disclosure of contract information for profit. Meanwhile, the ultimate depositor has to save the contract and the signatures of all signatories, which is easy to cause a waste of storage resources.
   
 The Multi-Party Contract Signing System proposed and designed in this paper takes advantage of the characteristics of Blockchain itself: Blockchain has a consensus algorithm mechanism that enables decentralized nodes to establish trust, so it functions as a trusted third party, thus eliminating the potential unfairness brought by the third party. At the same time, the system can generate aggregate signatures based on discrete logarithms, so that the final depositor only needs to store the contract and a aggregate signature, which reduces the huge demand for storage space. In addition, the fact that it is almost impossible to modify Blockchain after it is written makes it impossible for signatories to back out.
